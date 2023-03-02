@@ -30,7 +30,7 @@ prm
 dt3= prm %>% filter(year >= 1996)
 dt3
 
-#nubes de puntos por separado.
+#nubes de puntos por separado Y SE GUARDA EL ARCHIVO IMAGEN en un documento pdf.
 
 gf= dt3 %>% ggplot(aes(x=new_sp_m014, y =new_sp_f014, color = factor(year)))+ geom_point(size = 0.2) + facet_wrap(year ~. ,scales = "free") + geom_smooth(method = "lm", formula = y ~ x) + xlim(0,900) + ylim(0,1500) + labs(y= "Casos positivos de TB en niños de 0 a 14 años", x= "Casos positivos de TB en niños de 0 a 14 años") + stat_poly_eq(aes(label =  paste(..eq.label.., ..adj.rr.label.., sep = "~~~~")),
                                                                                                                                                                                                                                                                                                                                                      formula = y~x, parse = TRUE, label.x.npc= 0. , label.y.npc= 1000)
